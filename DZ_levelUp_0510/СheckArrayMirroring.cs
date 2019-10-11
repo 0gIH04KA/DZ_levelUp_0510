@@ -18,10 +18,14 @@ namespace DZ_levelUp_0510
             int[] Array = new int[sizeArray];
 
             FillArray(Array);
+
+            Console.Write("Array:\t");
+
             UI.PrintArray(Array);
 
+            Console.WriteLine();
             Console.WriteLine(CompareArray(Array));
-
+            Console.WriteLine();
         }
 
         static void FillArray(int[] Array)
@@ -35,6 +39,7 @@ namespace DZ_levelUp_0510
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.WriteLine("Ошибка ввода!!");
                     Console.ResetColor();
+
                     Console.Write($"Array [{i}] = ");
                 }
             }
@@ -45,21 +50,28 @@ namespace DZ_levelUp_0510
             int count = Array.Length / 2;
             string str = string.Empty;
 
-            for (int i = 0; i < (Array.Length / 2); i++)
+            if (Array.Length > 1)
             {
-                if (Array[i] != Array[Array.Length - i - 1])
+                for (int i = 0; i < (Array.Length / 2); i++)
                 {
-                    str = "Массив НЕ является зеркальным";
-                    break;
-                }
-                else
-                {
-                    count -= 1;
-                    if (count == 0)
+                    if (Array[i] != Array[Array.Length - i - 1])
                     {
-                        str = "Массив зекальынй";
+                        str = "Массив НЕ является зеркальным";
+                        break;
+                    }
+                    else
+                    {
+                        count -= 1;
+                        if (count == 0)
+                        {
+                            str = "Массив зекальынй";
+                        }
                     }
                 }
+            }
+            else
+            {
+                str = "Длина массива равна 1";
             }
 
             return str;

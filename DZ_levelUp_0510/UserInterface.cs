@@ -35,6 +35,7 @@ namespace DZ_levelUp_0510
             {
                 Console.Write("{0}\t", Array[i]);
             }
+
             Console.WriteLine();
         }
 

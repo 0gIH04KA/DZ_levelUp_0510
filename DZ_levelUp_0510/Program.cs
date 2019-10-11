@@ -11,25 +11,12 @@ namespace DZ_levelUp_0510
         static Random random = new Random();
         static UserInterface UI = new UserInterface();
 
-        static ArraySortTypes arraySortTypes = new ArraySortTypes(); // dz 1
-        static СheckArrayMirroring сheckArrayMirroring = new СheckArrayMirroring(); //dz 2
-        static ArraySwapMinMax arraySwap = new ArraySwapMinMax(); // dz3
-
+        static Print Print = new Print();
 
 
         static void Main(string[] args)
         {
-
-            arraySortTypes.SortArray();
-            сheckArrayMirroring.ArrayMirroring();
-            arraySwap.ArraySwap();
-
-
-
-
-
-
-
+            Print.ConsolePrint();
         }
 
 

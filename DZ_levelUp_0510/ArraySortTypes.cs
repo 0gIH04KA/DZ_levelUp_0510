@@ -8,23 +8,27 @@ namespace DZ_levelUp_0510
     {
         static UserInterface UI = new UserInterface();
 
+
         const int LOW_RANGE = -100,
                   HIGH_RANGE = 100;
 
         const int ARRAY_SIZE = 10;
 
-        static string str = "Для выбора нажмите Enter (= \nДля выхода нажмите Esc\n";
+        static string str = "Для выбора следующего алгортима сортирвки нажмите любую кнопку (= \tДля выхода нажмите Esc\n";
 
         public void SortArray()
         {
             int[] Array = new int[ARRAY_SIZE];
-            Console.WriteLine(@"Для выбора сортировки используйте цифровой блок
-1 - QuickSortArray
-2 - BubbleSort
-3 - ShellSort
-4 - ShakerSort");
-            Console.WriteLine(str);
 
+            Console.WriteLine(@"Для выбора сортировки используйте цифровой блок
+1 - Quick Sort Array
+2 - Bubble Sort
+3 - Shell Sort
+4 - Shaker Sort
+");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(str);
+            Console.ResetColor();
 
             while (Console.ReadKey(true).Key != ConsoleKey.Escape)
             {
@@ -38,30 +42,34 @@ namespace DZ_levelUp_0510
                 {
                     case 1:
                         QuickSortArray(Array);
-                        Console.ResetColor();
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(str);
+                        Console.ResetColor();
                         break;
 
                     case 2:
                         BubbleSort(Array);
-                        Console.ResetColor();
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(str);
+                        Console.ResetColor();
                         break;
 
                     case 3:
                         ShellSort(Array);
-                        Console.ResetColor();
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(str);
+                        Console.ResetColor();
                         break;
 
                     case 4:
                         ShakerSort(Array);
-                        Console.ResetColor();
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(str);
+                        Console.ResetColor();
                         break;
 
                     default:
-                        Console.WriteLine("Для выхода нажмите Esc");
+                        Console.WriteLine("Для завершения выбора сортировок нажмите Esc");
                         break;
                 }
             }
@@ -76,7 +84,6 @@ namespace DZ_levelUp_0510
             UI.PrintArray(Arr);
 
             Console.ForegroundColor = ConsoleColor.Red;
-
             Console.WriteLine("Quick Sort Array: ");
 
             Array.Sort(Arr);
@@ -92,8 +99,8 @@ namespace DZ_levelUp_0510
             UI.PrintArray(Arr);
 
             Console.ForegroundColor = ConsoleColor.Red;
-
             Console.WriteLine("Bubble Sort Array");
+
             GetBubbleSort(Arr);
             UI.PrintArray(Arr);
         }
@@ -125,8 +132,8 @@ namespace DZ_levelUp_0510
             UI.PrintArray(Arr);
 
             Console.ForegroundColor = ConsoleColor.Red;
-
             Console.WriteLine("Shell Sort Array");
+
             GetShellSort(Arr);
             UI.PrintArray(Arr);
         }
@@ -134,9 +141,9 @@ namespace DZ_levelUp_0510
         static void GetShellSort(int[] Arr)
         {
 
-            const int SHELL_INTERVAL = 2;   // первоначально используемая Шеллом последовательность длин промежутков: N / 2
-                                            // const int STEP_INTERVAL_3 = 3;   // длинa промежутков: N / 3
-                                            // const int STEP_INTERVAL_5 = 5;   // длинa промежутков: N / 5
+            const int SHELL_INTERVAL = 2;       // первоначально используемая Шеллом последовательность длин промежутков: N / 2
+         // const int STEP_INTERVAL_3 = 3;      // длинa промежутков: N / 3
+         // const int STEP_INTERVAL_5 = 5;      // длинa промежутков: N / 5
 
 
             int step = Arr.Length / SHELL_INTERVAL;
@@ -170,18 +177,16 @@ namespace DZ_levelUp_0510
             UI.PrintArray(Arr);
 
             Console.ForegroundColor = ConsoleColor.Red;
-
             Console.WriteLine("Shaker Sort Array");
+
             GetShakerSort(Arr);
             UI.PrintArray(Arr);
-
         }
 
         static void GetShakerSort(int[] Arr)
         {
             int left = 0,
                 right = Arr.Length - 1;
-
 
             while (left < right)
             {
@@ -209,11 +214,9 @@ namespace DZ_levelUp_0510
 
         static void Swap(int[] Arr, int i, int j)
         {
-            int glass = Arr[i];
+            int temp = Arr[i];
             Arr[i] = Arr[j];
-            Arr[j] = glass;
+            Arr[j] = temp;
         }
-
-       
     }
 }
