@@ -6,7 +6,6 @@ namespace DZ_levelUp_0510
 {
     class ArraySwapMinMax
     {
-        static Random random = new Random();
         static UserInterface UI = new UserInterface();
 
         const int LOW_RANGE = -100,
@@ -25,8 +24,8 @@ namespace DZ_levelUp_0510
             int[] Array = new int[sizeArray];
             int[] ArraySwap = new int[sizeArray];
 
-            CreatArray(Array, LOW_RANGE, HIGH_RANGE);
-            PrintArray(Array);
+            UI.CreatArray(Array, LOW_RANGE, HIGH_RANGE);
+            UI.PrintArray(Array);
 
             int min = MinElem(Array, ref indexMin);
             int max = MaxElem(Array, ref indexMax);
@@ -35,7 +34,7 @@ namespace DZ_levelUp_0510
                         
             Console.ForegroundColor = ConsoleColor.Red;
 
-            PrintArray(ArraySwap);
+            UI.PrintArray(ArraySwap);
             
             Console.ResetColor();
 
@@ -84,24 +83,6 @@ namespace DZ_levelUp_0510
             Array[indexMax] = min;
 
             return Array;
-        }
-
-
-        static void CreatArray(int[] Array, int lowRange, int highRange)
-        {
-            for (int i = 0; i < Array.Length; i++)
-            {
-                Array[i] = random.Next(lowRange, highRange);
-            }
-        }
-
-        static void PrintArray(int[] Array)
-        {
-            for (int i = 0; i < Array.Length; i++)
-            {
-                Console.Write("{0}\t", Array[i]);
-            }
-            Console.WriteLine();
-        }
+        } 
     }
 }

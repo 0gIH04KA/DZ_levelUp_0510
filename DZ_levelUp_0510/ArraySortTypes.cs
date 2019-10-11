@@ -6,7 +6,6 @@ namespace DZ_levelUp_0510
 {
     class ArraySortTypes
     {
-        static Random random = new Random();
         static UserInterface UI = new UserInterface();
 
         const int LOW_RANGE = -100,
@@ -73,15 +72,15 @@ namespace DZ_levelUp_0510
             Console.WriteLine("Quick Sort: \n");
             Console.WriteLine("Array: ");
 
-            CreatArray(Arr, LOW_RANGE, HIGH_RANGE);
-            PrintArray(Arr);
+            UI.CreatArray(Arr, LOW_RANGE, HIGH_RANGE);
+            UI.PrintArray(Arr);
 
             Console.ForegroundColor = ConsoleColor.Red;
 
             Console.WriteLine("Quick Sort Array: ");
 
             Array.Sort(Arr);
-            PrintArray(Arr);
+            UI.PrintArray(Arr);
         }
 
         static void BubbleSort(int[] Arr)
@@ -89,14 +88,14 @@ namespace DZ_levelUp_0510
             Console.WriteLine("Bubble Sort: \n");
             Console.WriteLine("Array: ");
 
-            CreatArray(Arr, LOW_RANGE, HIGH_RANGE);
-            PrintArray(Arr);
+            UI.CreatArray(Arr, LOW_RANGE, HIGH_RANGE);
+            UI.PrintArray(Arr);
 
             Console.ForegroundColor = ConsoleColor.Red;
 
             Console.WriteLine("Bubble Sort Array");
             GetBubbleSort(Arr);
-            PrintArray(Arr);
+            UI.PrintArray(Arr);
         }
 
         static void GetBubbleSort(int[] Arr)
@@ -122,14 +121,14 @@ namespace DZ_levelUp_0510
             Console.WriteLine("ShellSort: \n");
             Console.WriteLine("Array: ");
 
-            CreatArray(Arr, LOW_RANGE, HIGH_RANGE);
-            PrintArray(Arr);
+            UI.CreatArray(Arr, LOW_RANGE, HIGH_RANGE);
+            UI.PrintArray(Arr);
 
             Console.ForegroundColor = ConsoleColor.Red;
 
             Console.WriteLine("Shell Sort Array");
             GetShellSort(Arr);
-            PrintArray(Arr);
+            UI.PrintArray(Arr);
         }
 
         static void GetShellSort(int[] Arr)
@@ -167,14 +166,14 @@ namespace DZ_levelUp_0510
             Console.WriteLine("Shaker Sort: \n");
             Console.WriteLine("Array: ");
 
-            CreatArray(Arr, LOW_RANGE, HIGH_RANGE);
-            PrintArray(Arr);
+            UI.CreatArray(Arr, LOW_RANGE, HIGH_RANGE);
+            UI.PrintArray(Arr);
 
             Console.ForegroundColor = ConsoleColor.Red;
 
             Console.WriteLine("Shaker Sort Array");
             GetShakerSort(Arr);
-            PrintArray(Arr);
+            UI.PrintArray(Arr);
 
         }
 
@@ -215,23 +214,6 @@ namespace DZ_levelUp_0510
             Arr[j] = glass;
         }
 
-
-
-        static void CreatArray(int[] Array, int lowRange, int highRange)
-        {
-            for (int i = 0; i < Array.Length; i++)
-            {
-                Array[i] = random.Next(lowRange, highRange);
-            }
-        }
-
-        static void PrintArray(int[] Array)
-        {
-            for (int i = 0; i < Array.Length; i++)
-            {
-                Console.Write("{0}\t", Array[i]);
-            }
-            Console.WriteLine();
-        }
+       
     }
 }

@@ -19,9 +19,7 @@ namespace DZ_levelUp_0510
 
         static void Main(string[] args)
         {
-            
-            
-            
+
             arraySortTypes.SortArray();
             сheckArrayMirroring.ArrayMirroring();
             arraySwap.ArraySwap();

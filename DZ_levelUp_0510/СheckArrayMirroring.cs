@@ -18,7 +18,7 @@ namespace DZ_levelUp_0510
             int[] Array = new int[sizeArray];
 
             FillArray(Array);
-            PrintArray(Array);
+            UI.PrintArray(Array);
 
             Console.WriteLine(CompareArray(Array));
 
@@ -63,15 +63,6 @@ namespace DZ_levelUp_0510
             }
 
             return str;
-        }
-
-        static void PrintArray(int[] Array)
-        {
-            for (int i = 0; i < Array.Length; i++)
-            {
-                Console.Write("{0}\t", Array[i]);
-            }
-            Console.WriteLine();
         }
     }
 }
