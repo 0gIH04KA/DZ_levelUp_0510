@@ -21,6 +21,7 @@ namespace DZ_levelUp_0510
             int[] Array = new int[ARRAY_SIZE];
 
             Console.WriteLine(@"Для выбора сортировки используйте цифровой блок
+
 1 - Quick Sort Array
 2 - Bubble Sort
 3 - Shell Sort
