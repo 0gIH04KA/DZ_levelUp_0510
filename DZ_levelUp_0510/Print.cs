@@ -11,7 +11,8 @@ namespace DZ_levelUp_0510
         static ArraySortTypes arraySortTypes = new ArraySortTypes();                    // dz 1
         static СheckArrayMirroring сheckArrayMirroring = new СheckArrayMirroring();     // dz 2
         static ArraySwapMinMax arraySwap = new ArraySwapMinMax();                       // dz 3
-        
+        static MultiplicationMatrix multiplicationMatrix = new MultiplicationMatrix();  // dz 4
+
 
         static string str = "Для выбора ЗАДАНИЯ нажмите ЛЮБУЮ кнопку (= \nДля ВЫХОДА нажмите Esc\n";
 
@@ -19,9 +20,10 @@ namespace DZ_levelUp_0510
         {
             Console.WriteLine(@"Для выбора задания используйте цифровой блок (:
 
-Первое Задание: Реализовать различные виды сортирвки
-Второе Задание: Проверить массив на зеркальность
-Третье Задание: Найти в массиве Min и Max значение и поменять их местами
+Первое Задание:     Реализовать различные виды сортирвки
+Второе Задание:     Проверить массив на зеркальность
+Третье Задание:     Найти в массиве Min и Max значение и поменять их местами
+Четвертое Задание:  Умножение двух матриц
 ");
 
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -34,7 +36,7 @@ namespace DZ_levelUp_0510
 
                 int selectionHomeWork = 0;
 
-                selectionHomeWork = UI.dataInput(selectionHomeWork);
+                selectionHomeWork = UI.DataInput(selectionHomeWork);
 
                 switch (selectionHomeWork)
                 {
@@ -63,6 +65,16 @@ namespace DZ_levelUp_0510
                         
                         arraySwap.ArraySwap();
                         
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(str);
+                        Console.ResetColor();
+                        break;
+
+                    case 4:
+                        Console.WriteLine("Четвертое Задание: Умножение двух матриц\n");
+
+                        multiplicationMatrix.MatrixMultiplication();
+
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(str);
                         Console.ResetColor();

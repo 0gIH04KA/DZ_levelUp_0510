@@ -37,7 +37,7 @@ namespace DZ_levelUp_0510
 
                 int typeSort = 0;
 
-                typeSort = UI.dataInput(typeSort);
+                typeSort = UI.DataInput(typeSort);
 
                 switch (typeSort)
                 {

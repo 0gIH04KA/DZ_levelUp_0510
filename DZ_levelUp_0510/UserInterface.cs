@@ -9,7 +9,7 @@ namespace DZ_levelUp_0510
         static Random random = new Random();
 
 
-        public int dataInput(int numbers)
+        public int DataInput(int numbers)
         {
             while (!int.TryParse(Console.ReadLine(), out numbers))
             {
@@ -37,6 +37,18 @@ namespace DZ_levelUp_0510
             }
 
             Console.WriteLine();
+        }
+
+        public void PrintArray_N_M(int[,] Array)
+        {
+            for (int i = 0; i < Array.GetLength(0); i++)
+            {
+                for (int j = 0; j < Array.GetLength(1); j++)
+                {
+                    Console.Write("{0} ", Array[i, j]);
+                }
+                Console.WriteLine();
+            }
         }
 
     }

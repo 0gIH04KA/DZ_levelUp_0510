@@ -11,12 +11,20 @@ namespace DZ_levelUp_0510
         static Random random = new Random();
         static UserInterface UI = new UserInterface();
 
+       
         static Print Print = new Print();
 
 
         static void Main(string[] args)
         {
             Print.ConsolePrint();
+
+            Console.ReadKey();
+
+
+
+
+
         }
 
 

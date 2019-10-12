@@ -13,7 +13,7 @@ namespace DZ_levelUp_0510
             int sizeArray = 0;
             Console.Write("Задайте размер массива: ");
 
-            sizeArray = UI.dataInput(sizeArray);
+            sizeArray = UI.DataInput(sizeArray);
 
             int[] Array = new int[sizeArray];
 
