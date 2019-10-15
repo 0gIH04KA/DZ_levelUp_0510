@@ -8,78 +8,64 @@ namespace DZ_levelUp_0510
     {
         static UserInterface UI = new UserInterface();
 
-        int A_N = 0;
-        int A_M = 0;
-        int B_N = 0;
-        int B_M = 0;
+        int firstMatrixLength = 0;
+        int firstMatrixHeight = 0;
+
+        int secondMatrixLength = 0;
+        int secondMatrixHeight = 0;
+
 
         public void MatrixMultiplication()
         {
             Console.WriteLine("Введите размерность первой матрицы: ");
             Console.Write("Матрица А [N,*] = ");
-            
-            A_N = UI.DataInput(A_N);
+
+            firstMatrixLength = UI.DataInput(firstMatrixLength);
 
             Console.Write("Матрица А [*,M] = ");
 
-            A_M = UI.DataInput(A_M);
+            firstMatrixHeight = UI.DataInput(firstMatrixHeight);
 
-            int[,] A = new int[A_N, A_M];
+            int[,] firstMatrix = new int[firstMatrixLength, firstMatrixHeight];
 
-            for (int i = 0; i < A.GetLength(0); i++)
-            {
-                for (int j = 0; j < A.GetLength(1); j++)
-                {
-                    Console.Write($"A[{i},{j}] = ");
-
-                    A[i, j] = UI.DataInput(A[i, j]);
-                }
-            }
+            UI.GetFillingTwoDimensionalArray(firstMatrix);
 
             Console.WriteLine("Введите размерность второй матрицы: ");
             Console.Write("Матрица B [N,*] = ");
 
-            B_N = UI.DataInput(B_N);
+            secondMatrixLength = UI.DataInput(secondMatrixLength);
 
             Console.Write("Матрица B [*,M] = ");
 
-            B_M = UI.DataInput(B_M);
+            secondMatrixHeight = UI.DataInput(secondMatrixHeight);
 
-            int[,] B = new int[B_N, B_M];
+            int[,] secondMatrix = new int[secondMatrixLength, secondMatrixHeight];
 
-            for (int i = 0; i < B.GetLength(0); i++)
-            {
-                for (int j = 0; j < B.GetLength(1); j++)
-                {
-                    Console.Write($"B[{i},{j}] = ");
-
-                    B[i, j] = UI.DataInput(B[i, j]);
-                }
-            }
+            UI.GetFillingTwoDimensionalArray(secondMatrix);
 
             Console.WriteLine("\nМатрица A:");
-            UI.PrintArray_N_M(A);
-            
-            Console.WriteLine("\nМатрица B:");
-            UI.PrintArray_N_M(B);
-           
-            Console.WriteLine("\nМатрица C = A * B:");
-            int[,] C = Multiplication(A, B);
-            UI.PrintArray_N_M(C);
+            UI.PrintTwoDimensionalArray(firstMatrix);
 
+            Console.WriteLine("\nМатрица B:");
+            UI.PrintTwoDimensionalArray(secondMatrix);
+
+            Console.WriteLine("\nМатрица C = A * B:");
+            int[,] resultArray = GetMultiplicationMatrix(firstMatrix, secondMatrix);
+            UI.PrintTwoDimensionalArray(resultArray);
         }
-        static int[,] Multiplication(int[,] arrayA, int[,] arrayB)
+
+        static int[,] GetMultiplicationMatrix(int[,] firstMatrix, int[,] secondMatrix)
         {
-            if (arrayA.GetLength(1) == arrayB.GetLength(0))
+            if (firstMatrix.GetLength(1) == secondMatrix.GetLength(0))
             {
-                int[,] result = new int[arrayA.GetLength(0), arrayB.GetLength(1)];
-                for (int i = 0; i < arrayA.GetLength(0); i++)
+                int[,] result = new int[firstMatrix.GetLength(0), secondMatrix.GetLength(1)];
+                for (int i = 0; i < firstMatrix.GetLength(0); i++)
                 {
-                    for (int j = 0; j < arrayB.GetLength(1); j++)
+                    for (int j = 0; j < secondMatrix.GetLength(1); j++)
                     {
-                        for (int k = 0; k < arrayB.GetLength(0); k++)
+                        for (int k = 0; k < secondMatrix.GetLength(0); k++)
                         {
-                            result [i, j] += arrayA[i, k] * arrayB[k, j];
+                            result [i, j] += firstMatrix[i, k] * secondMatrix[k, j];
                         }
                     }
                 }
@@ -90,7 +76,11 @@ namespace DZ_levelUp_0510
             {
                 Console.WriteLine("Невозможно умножить матрицы!");
 
-                int[,] result = new int[2, 2] { { 0, 0}, { 0, 0 } };
+                int[,] result = new int[,] 
+                { 
+                    { 0, 0 }, 
+                    { 0, 0 } 
+                };
 
                 return result;
             }

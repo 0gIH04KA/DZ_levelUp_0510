@@ -12,71 +12,7 @@ namespace DZ_levelUp_0510
         const int LOW_RANGE = -100,
                   HIGH_RANGE = 100;
 
-        const int ARRAY_SIZE = 10;
-
-        static string str = "Для выбора следующего алгортима сортирвки нажмите любую кнопку (= \tДля выхода нажмите Esc\n";
-
-        public void SortArray()
-        {
-            int[] Array = new int[ARRAY_SIZE];
-
-            Console.WriteLine(@"Для выбора сортировки используйте цифровой блок
-
-1 - Quick Sort Array
-2 - Bubble Sort
-3 - Shell Sort
-4 - Shaker Sort
-");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(str);
-            Console.ResetColor();
-
-            while (Console.ReadKey(true).Key != ConsoleKey.Escape)
-            {
-                Console.Write("Выберите алгорит сортировки:");
-
-                int typeSort = 0;
-
-                typeSort = UI.DataInput(typeSort);
-
-                switch (typeSort)
-                {
-                    case 1:
-                        QuickSortArray(Array);
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine(str);
-                        Console.ResetColor();
-                        break;
-
-                    case 2:
-                        BubbleSort(Array);
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine(str);
-                        Console.ResetColor();
-                        break;
-
-                    case 3:
-                        ShellSort(Array);
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine(str);
-                        Console.ResetColor();
-                        break;
-
-                    case 4:
-                        ShakerSort(Array);
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine(str);
-                        Console.ResetColor();
-                        break;
-
-                    default:
-                        Console.WriteLine("Для завершения выбора сортировок нажмите Esc");
-                        break;
-                }
-            }
-        }
-
-        static void QuickSortArray(int[] Arr)
+        public void QuickSortArray(int[] Arr)
         {
             Console.WriteLine("Quick Sort: \n");
             Console.WriteLine("Array: ");
@@ -91,7 +27,7 @@ namespace DZ_levelUp_0510
             UI.PrintArray(Arr);
         }
 
-        static void BubbleSort(int[] Arr)
+        public void BubbleSort(int[] Arr)
         {
             Console.WriteLine("Bubble Sort: \n");
             Console.WriteLine("Array: ");
@@ -124,7 +60,7 @@ namespace DZ_levelUp_0510
             }
         }
 
-        static void ShellSort(int[] Arr)
+        public void ShellSort(int[] Arr)
         {
             Console.WriteLine("ShellSort: \n");
             Console.WriteLine("Array: ");
@@ -169,7 +105,7 @@ namespace DZ_levelUp_0510
             }
         }
 
-        static void ShakerSort(int[] Arr)
+        public void ShakerSort(int[] Arr)
         {
             Console.WriteLine("Shaker Sort: \n");
             Console.WriteLine("Array: ");

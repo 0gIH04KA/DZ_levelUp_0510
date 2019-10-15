@@ -11,20 +11,37 @@ namespace DZ_levelUp_0510
         static Random random = new Random();
         static UserInterface UI = new UserInterface();
 
-       
         static Print Print = new Print();
 
+        static ArrayTwoDimensionalSwapMinMax arrayTwoDimensionalSwapMinMax = new ArrayTwoDimensionalSwapMinMax();
+       static  ArraySwapMinMax ArraySwapMinMax = new ArraySwapMinMax();
 
         static void Main(string[] args)
         {
-            Print.ConsolePrint();
+            //Print.ConsolePrint();
+            ArraySwapMinMax.ArraySwap();
+            arrayTwoDimensionalSwapMinMax.ArrayTwoDimensionalSwap();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             Console.ReadKey();
-
-
-
-
-
         }
 
 
@@ -49,17 +66,9 @@ namespace DZ_levelUp_0510
         }
 
 
+
+
     }
-
-
-    
-
-
-
-
-
-
-
 }
 
 

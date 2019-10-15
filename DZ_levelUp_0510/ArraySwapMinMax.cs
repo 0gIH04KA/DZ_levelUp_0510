@@ -1,4 +1,4 @@
-﻿using System;
+﻿   using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,14 +10,15 @@ namespace DZ_levelUp_0510
 
         const int LOW_RANGE = -100,
                   HIGH_RANGE = 100;
-
+       
+        int sizeArray = 0;
         int indexMax = 0;
         int indexMin = 0;
 
+
         public void ArraySwap()
         {
-            int sizeArray = 0;
-            Console.Write("Задайте размер массива: ");
+            Console.Write("Задайте длину массива: ");
 
             sizeArray = UI.DataInput(sizeArray);
 
@@ -27,10 +28,10 @@ namespace DZ_levelUp_0510
             UI.CreatArray(Array, LOW_RANGE, HIGH_RANGE);
             UI.PrintArray(Array);
 
-            int min = MinElem(Array, ref indexMin);
-            int max = MaxElem(Array, ref indexMax);
+            int minValue = MinElem(Array, ref indexMin);
+            int maxValue = MaxElem(Array, ref indexMax);
 
-            ArraySwap = Swap(Array, indexMin, min, indexMax, max);
+            ArraySwap = Swap(Array, indexMin, minValue, indexMax, maxValue);
                         
             Console.ForegroundColor = ConsoleColor.Red;
 
@@ -39,10 +40,9 @@ namespace DZ_levelUp_0510
             Console.ResetColor();
 
 #if true
-            Console.WriteLine($"min = {min}, IndexMin = {indexMin}");
-            Console.WriteLine($"min = {max}, IndexMax = {indexMax}");
+            Console.WriteLine($"min = {minValue}, IndexMin = {indexMin}");
+            Console.WriteLine($"min = {maxValue}, IndexMax = {indexMax}");
 #endif
-
         }
 
         static int MaxElem(int[] Array, ref int indexMax)
