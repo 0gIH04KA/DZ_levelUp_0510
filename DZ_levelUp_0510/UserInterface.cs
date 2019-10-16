@@ -49,7 +49,6 @@ namespace DZ_levelUp_0510
                 {
                     Array[i,j] = random.Next(lowRange, highRange);
                 }
-               
             }
         }
 

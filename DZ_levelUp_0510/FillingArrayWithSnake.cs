@@ -11,10 +11,10 @@ namespace DZ_levelUp_0510
 
         public void ArrayWithSnakeToDiagonal()
         {
-            int sizeOfMatrix = 0,
-                value = 1,
-                xy = 0,
-                yx = 0;
+            int sizeOfMatrix = 0;
+            int value = 1;
+            int xy = 0;
+            int yx = 0;
 
             Console.Write("Введите размерность массива : ");
 
@@ -232,6 +232,7 @@ namespace DZ_levelUp_0510
         {
             array[xy, yx] = value;
             value++;
+
             return value;
         }
     }

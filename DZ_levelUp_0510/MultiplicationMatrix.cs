@@ -8,12 +8,12 @@ namespace DZ_levelUp_0510
     {
         static UserInterface UI = new UserInterface();
 
+
         int firstMatrixLength = 0;
         int firstMatrixHeight = 0;
 
         int secondMatrixLength = 0;
         int secondMatrixHeight = 0;
-
 
         public void MatrixMultiplication()
         {
@@ -76,11 +76,15 @@ namespace DZ_levelUp_0510
             {
                 Console.WriteLine("Невозможно умножить матрицы!");
 
-                int[,] result = new int[,] 
-                { 
-                    { 0, 0 }, 
-                    { 0, 0 } 
-                };
+                int[,] result = new int[firstMatrix.GetLength(0), secondMatrix.GetLength(1)];
+                
+                for (int i = 0; i < result.GetLength(0); i++)
+                {
+                    for (int j = 0; j < result.GetLength(1); j++)
+                    {
+                        result[i, j] = 0;
+                    }
+                }
 
                 return result;
             }

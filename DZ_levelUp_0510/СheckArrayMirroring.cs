@@ -57,6 +57,7 @@ namespace DZ_levelUp_0510
                     if (Array[i] != Array[Array.Length - i - 1])
                     {
                         str = "Массив НЕ является зеркальным";
+
                         break;
                     }
                     else

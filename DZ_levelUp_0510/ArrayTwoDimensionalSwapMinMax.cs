@@ -8,6 +8,7 @@ namespace DZ_levelUp_0510
     {
         static UserInterface UI = new UserInterface();
 
+
         const int LOW_RANGE = -100,
                   HIGH_RANGE = 100;
 
@@ -24,7 +25,7 @@ namespace DZ_levelUp_0510
         {
             Console.WriteLine("Задайте размер Матрицы: ");
 
-            Console.Write("Длина матрицы [N,*] = ");
+            Console.Write("Длина матрицы  [N,*] = ");
 
             matrixLength = UI.DataInput(matrixLength);
 
@@ -33,7 +34,6 @@ namespace DZ_levelUp_0510
             matrixHeight = UI.DataInput(matrixHeight);
 
             int[,] Matrix = new int[matrixLength, matrixHeight];
-
             int[,] ArraySwap = new int[matrixLength, matrixHeight];
 
             UI.CreatTwoDimensionalArray(Matrix, LOW_RANGE, HIGH_RANGE);

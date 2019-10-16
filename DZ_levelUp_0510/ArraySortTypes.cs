@@ -77,11 +77,9 @@ namespace DZ_levelUp_0510
 
         static void GetShellSort(int[] Arr)
         {
-
             const int SHELL_INTERVAL = 2;       // первоначально используемая Шеллом последовательность длин промежутков: N / 2
          // const int STEP_INTERVAL_3 = 3;      // длинa промежутков: N / 3
          // const int STEP_INTERVAL_5 = 5;      // длинa промежутков: N / 5
-
 
             int step = Arr.Length / SHELL_INTERVAL;
 
@@ -122,8 +120,8 @@ namespace DZ_levelUp_0510
 
         static void GetShakerSort(int[] Arr)
         {
-            int left = 0,
-                right = Arr.Length - 1;
+            int left = 0;
+            int right = Arr.Length - 1;
 
             while (left < right)
             {

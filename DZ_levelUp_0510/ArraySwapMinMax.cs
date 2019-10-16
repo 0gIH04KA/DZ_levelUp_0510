@@ -8,13 +8,13 @@ namespace DZ_levelUp_0510
     {
         static UserInterface UI = new UserInterface();
 
+
         const int LOW_RANGE = -100,
                   HIGH_RANGE = 100;
-       
+
         int sizeArray = 0;
         int indexMax = 0;
         int indexMin = 0;
-
 
         public void ArraySwap()
         {

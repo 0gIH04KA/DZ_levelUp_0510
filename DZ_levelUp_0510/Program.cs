@@ -13,61 +13,13 @@ namespace DZ_levelUp_0510
 
         static Print Print = new Print();
 
-        static ArrayTwoDimensionalSwapMinMax arrayTwoDimensionalSwapMinMax = new ArrayTwoDimensionalSwapMinMax();
-       static  ArraySwapMinMax ArraySwapMinMax = new ArraySwapMinMax();
-
+       
         static void Main(string[] args)
         {
-            //Print.ConsolePrint();
-            ArraySwapMinMax.ArraySwap();
-            arrayTwoDimensionalSwapMinMax.ArrayTwoDimensionalSwap();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            Print.ConsolePrint();
+            
             Console.ReadKey();
         }
-
-
-       
-
-
-        static void CreatArray(int[] Array, int lowRange, int highRange)
-        {
-            for (int i = 0; i < Array.Length; i++)
-            {
-                Array[i] = random.Next(lowRange, highRange);
-            }
-        }
-
-        static void PrintArray(int[] Array)
-        {
-            for (int i = 0; i < Array.Length; i++)
-            {
-                Console.Write("{0}\t", Array[i]);
-            }
-            Console.WriteLine();
-        }
-
-
-
-
     }
 }
 

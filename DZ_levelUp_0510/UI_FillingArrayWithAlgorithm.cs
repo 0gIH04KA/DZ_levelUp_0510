@@ -34,6 +34,7 @@ namespace DZ_levelUp_0510
     9  10  11  12
     13 14  15  16
 ");
+
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(str);
             Console.ResetColor();
